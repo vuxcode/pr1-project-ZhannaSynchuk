@@ -1,8 +1,3 @@
 # Time Report
 
-> Write about what you have done and how long you have worked on each part of the project.
-
-For example: 
-
-- 2022-03-30 18:00 Worked for 1 hour.
-  - *List the things you have done.*
+2022-04-11: 11.00 - 2,5h. created input line and buttons, added the function "input" to save all input symbols in a row in the input line.

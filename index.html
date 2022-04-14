@@ -1,1 +1,45 @@
-<!-- Start writing your project code in this file! -->
+<!--Add an input line and buttons-->
+
+<hi id="input"></hi> <br> 
+<button onclick="input('C')">C</button> 
+<button onclick="input('=')">=</button> <br> 
+<button onclick="input(7)">7</button> 
+<button onclick="input(8)">8</button> 
+<button onclick="input(9)">9</button> 
+<button onclick="input('+')">+</button> <br> 
+<button onclick="input(4)">4</button> 
+<button onclick="input(5)">5</button> 
+<button onclick="input(6)">6</button> 
+<button onclick="input('-')">-</button> <br> 
+<button onclick="input(1)">1</button>
+<button onclick="input(2)">2</button>  
+<button onclick="input(3)">3</button> 
+<button onclick="input('/')">/</button> <br>
+<button onclick="input('.')">.</button> 
+<button onclick="input(0)">0</button> 
+<button onclick="input('%')">%</button> 
+<button onclick="input('*')">*</button> 
+<script>
+    
+
+   //store the input line as a variable
+    var mainLine=document.getElementById("input");
+    
+    //store an empty array as variable
+    var output=[];
+
+    //add a function that shows input symbols in the input line
+    function input(symbol){
+
+       //use array functions for the input line displays all input symbols in a row
+       output.push(symbol);
+       var result=output.join('');          
+       
+        console.log(output);
+        console.log(result);        
+
+        mainLine.innerHTML=result;
+
+   
+    }
+</script>

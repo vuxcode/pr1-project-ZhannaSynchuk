@@ -22,24 +22,46 @@
 <script>
     
 
-   //store the input line as a variable
+   //create a variable to find the button element on the screen
     var mainLine=document.getElementById("input");
     
-    //store an empty array as variable
-    var output=[];
+    //store an empty array as variable for the first number
+    var inputNumber1=[];
+    //update inputNumber1 by using join() method
+    var joinedNumber1=0;
+     //store another empty array as variable for the second number
+     var inputNumber2=[];
+     //update inputNumber2 by using join();
+     var joinedNumber2=0;
+     //create a variable with empty string to store the input operator  
+     var sign="";
 
-    //add a function that shows input symbols in the input line
+    //add a function that displays input symbols in the input line
     function input(symbol){
 
-       //use array functions for the input line displays all input symbols in a row
-       output.push(symbol);
-       var result=output.join('');          
-       
-        console.log(output);
-        console.log(result);        
-
-        mainLine.innerHTML=result;
-
-   
+        //use if/else statement to store input numbers in the desired array
+        if (sign==false){
+            inputNumber1.push(symbol);
+            joinedNumber1=inputNumber1.join('');
+            console.log(joinedNumber1);
+        mainLine.innerText=joinedNumber1;
+        }
+        else {
+            inputNumber2.push(symbol);
+            joinedNumber2=inputNumber2.join('');
+            console.log(joinedNumber2);
+            mainLine.innerText=joinedNumber1+sign+joinedNumber2;
+        }
     }
+//create a function operator that displays mathematical sign in the input line
+function operator(symbol){
+    sign=symbol;
+    console.log(symbol);
+    mainLine.innerText=joinedNumber1+sign;
+}
+
+       //use array functions for the input line displays all input symbols in a row
+      
+   
+    
 </script>

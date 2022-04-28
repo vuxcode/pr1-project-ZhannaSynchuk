@@ -64,7 +64,23 @@ function operator(symbol){
     mainLine.innerText=joinedNumber1+sign;
 }
 
-       //use array functions for the input line displays all input symbols in a row
+//created a function equal to do calculations by using if/else statement
+function equal (symbol){
+    if (sign=="+"){
+        mainLine.innerText=joinedNumber1+joinedNumber2;
+    }
+    if (sign=="-"){
+        mainLine.innerText=joinedNumber1-joinedNumber2;
+    }
+    if (sign=="*"){
+        mainLine.innerText=joinedNumber1*joinedNumber2;
+    }
+    if (sign=="/"){
+        mainLine.innerText=joinedNumber1/joinedNumber2;
+    }
+}
+
+      
       
    
     

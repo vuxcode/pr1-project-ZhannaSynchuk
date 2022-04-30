@@ -28,11 +28,11 @@
     //store an empty array as variable for the first number
     var inputNumber1=[];
     //update inputNumber1 by using join() method
-    var joinedNumber1=0;
+    var joinNumber1=0;
      //store another empty array as variable for the second number
      var inputNumber2=[];
      //update inputNumber2 by using join();
-     var joinedNumber2=0;
+     var joinNumber2=0;
      //create a variable with empty string to store the input operator  
      var sign="";
 
@@ -44,39 +44,40 @@
         if (sign==false){
             inputNumber1.push(symbol);
             //update a variable with join() method and save it as a number
-            joinedNumber1=Number(inputNumber1.join(''));
-            console.log(joinedNumber1);
-        mainLine.innerText=joinedNumber1;
+            joinNumber1=Number(inputNumber1.join(''));
+            console.log(joinNumber1);
+        mainLine.innerText=joinNumber1;
         }
         //if there is an input operator input numbers are saved in the second array 
         else {
             inputNumber2.push(symbol);
             //update a variable with join() method and save it as a number
-            joinedNumber2=Number(inputNumber2.join(''));
-            console.log(joinedNumber2);
-            mainLine.innerText=joinedNumber1+sign+joinedNumber2;
+            joinNumber2=Number(inputNumber2.join(''));
+            console.log(joinNumber2);
+            mainLine.innerText=joinNumber1+sign+joinNumber2;
         }
     }
 //create a function operator that displays mathematical sign in the input line
 function operator(symbol){
     sign=symbol;
     console.log(symbol);
-    mainLine.innerText=joinedNumber1+sign;
+    mainLine.innerText=joinNumber1+sign;
 }
 
 //created a function equal to do calculations by using if/else statement
 function equal (symbol){
+    
     if (sign=="+"){
-        mainLine.innerText=joinedNumber1+joinedNumber2;
+        mainLine.innerText=joinNumber1+joinNumber2;
     }
     if (sign=="-"){
-        mainLine.innerText=joinedNumber1-joinedNumber2;
+        mainLine.innerText=joinNumber1-joinNumber2;
     }
     if (sign=="*"){
-        mainLine.innerText=joinedNumber1*joinedNumber2;
+        mainLine.innerText=joinNumber1*joinNumber2;
     }
     if (sign=="/"){
-        mainLine.innerText=joinedNumber1/joinedNumber2;
+        mainLine.innerText=joinNumber1/joinNumber2;
     }
 }
 

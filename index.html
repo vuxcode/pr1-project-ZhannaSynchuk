@@ -1,6 +1,7 @@
 <!--Add an input line and buttons-->
 
-<h1 id="input"></h1> <br> 
+<div id="input">
+    <p>0</p></div> <br>  
 <button onclick="clean('C')">C</button> 
 <button onclick="equal('=')">=</button> <br> 
 <button onclick="input(7)">7</button> 
@@ -64,6 +65,16 @@ function operator(symbol){
     mainLine.innerText=joinNumber1+sign;
 }
 
+/*after the calculated result
+ delete contents of arrays and operator
+ for subsequent input of numbers*/
+ function empty() {
+    inputNumber1.length=0;
+    sign=0;
+    inputNumber2.length=0;
+}
+
+
 //created a function equal to do calculations by using if/else statement
 function equal (symbol){
     
@@ -79,12 +90,7 @@ function equal (symbol){
     if (sign=="/"){
         mainLine.innerText=joinNumber1/joinNumber2;
     }
-    /*after the calculated result
-    delete contents of arrays and operator
-    for subsequent input of numbers*/
-    inputNumber1.length=0;
-    sign=0;
-    inputNumber2.length=0;
+   empty();
 }
 // add function percentage
 // it'll convert both single input number in decimal and results of math. operations 
@@ -108,12 +114,7 @@ if (sign=="*"){
 if (sign=="/"){
     mainLine.innerText=joinNumber1/joinNumber2/100;
 }
-/*after the calculated result
-    delete contents of arrays and operator
-    for subsequent input of numbers*/
-    inputNumber1.length=0;
-    sign=0;
-    inputNumber2.length=0;
+empty();
     
 }
 

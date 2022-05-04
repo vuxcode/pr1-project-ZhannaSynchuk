@@ -6,4 +6,6 @@
 
 2022-04-28: 22.00 - 1h. added function equal that performs mathematical operations.
 
-2022-04-28: 23.00 - 1,5h. changed function equal so that after calculated result it will delete all content of arrays and math.operator for subsequent input of numbers 
+2022-04-28: 23.00 - 1,5h. changed function equal so that after calculated result it will delete all content of arrays and math.operator for subsequent input of numbers
+
+2022-05-04: 11.30 - 1,5h. added function percentage and function empty

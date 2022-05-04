@@ -5,3 +5,5 @@
 1. P.: How to save in the input line of calculator three or more input symbols in a row (not to change one for another), like this 3+5 or 4*7-3? S.: Store an empty array above the function, use an array function push(symbol) and join(array name) inside the function for to save all the input symbols in one line. 
 
 2. P.: When using mathematical operators, I found that the solution above wouldn't work, as it's not possible to use a specific index to point on input numbers 1 and 2, as input number can consist of several digits. S.: To make the calculator work correctly it needs to be created separate arrays for each input number and then, as method join doesn't change the initial array, I added another variables to store joined arrays. 
+
+3. P.: After gotten calculation result it's not possible to enter new numbers to do new calculation from the beginning, as it continues to fill existing arrays from previous calculations.  S.: To solv this problem, in the function operator I set array's length for both input numbers to zero as well as var sign with operator. Such way it'll empty all previous arrays that will give a possibility to enter new numbers.  

@@ -17,7 +17,7 @@
 <button onclick="operator('/')">/</button> <br>
 <button onclick="input('.')">.</button> 
 <button onclick="input(0)">0</button> 
-<button onclick="operator('%')">%</button> 
+<button onclick="percentage('%')">%</button> 
 <button onclick="operator('*')">*</button> 
 <script>
     
@@ -85,6 +85,36 @@ function equal (symbol){
     inputNumber1.length=0;
     sign=0;
     inputNumber2.length=0;
+}
+// add function percentage
+// it'll convert both single input number in decimal and results of math. operations 
+function percentage(){
+
+// to convert a single input number
+if (inputNumber1.length!=0&&joinNumber1!=NaN) {
+mainLine.innerText=joinNumber1/100
+}
+//to count a result by using %
+if (sign=="+"){
+    mainLine.innerText=joinNumber1+joinNumber1*joinNumber2/100;
+      
+}
+if (sign=="-"){
+    mainLine.innerText=joinNumber1-joinNumber1*joinNumber2/100;
+}
+if (sign=="*"){
+    mainLine.innerText=joinNumber1*joinNumber2/100;
+}
+if (sign=="/"){
+    mainLine.innerText=joinNumber1/joinNumber2/100;
+}
+/*after the calculated result
+    delete contents of arrays and operator
+    for subsequent input of numbers*/
+    inputNumber1.length=0;
+    sign=0;
+    inputNumber2.length=0;
+    
 }
 
       

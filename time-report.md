@@ -10,4 +10,6 @@
 
 2022-05-04: 11.30 - 1,5h. added function percentage and function empty
 
-2022-05-10: 9.00 - 3,5 h. updated buttons; added variable to store a gotten result for further calculation; changed function operator for it to be used only once in a row between two input numbers; changed function percentage so that it's possible to convert both a single input number and a gotten result in decimal as well as to use % in calculations, where it'll perform the same function as "=".    
+2022-05-10: 9.00 - 3,5 h. updated buttons; added variable to store a gotten result for further calculation; changed function operator for it to be used only once in a row between two input numbers; changed function percentage so that it's possible to convert both a single input number and a gotten result in decimal as well as to use % in calculations, where it'll perform the same function as "=".   
+
+2022-05-10: 21.00 - 1 h. created function del for button "C".

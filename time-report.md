@@ -9,3 +9,5 @@
 2022-04-28: 23.00 - 1,5h. changed function equal so that after calculated result it will delete all content of arrays and math.operator for subsequent input of numbers
 
 2022-05-04: 11.30 - 1,5h. added function percentage and function empty
+
+2022-05-10: 9.00 - 3,5 h. updated buttons; added variable to store a gotten result for further calculation; changed function operator for it to be used only once in a row between two input numbers; changed function percentage so that it's possible to convert both a single input number and a gotten result in decimal as well as to use % in calculations, where it'll perform the same function as "=".    

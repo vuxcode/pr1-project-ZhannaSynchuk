@@ -61,12 +61,20 @@ function input(symbol){
         }
     }
 //create a function operator that displays mathematical sign in the input line
-function operator(symbol){
-    sign=symbol;
-    console.log(symbol);
-    mainLine.innerText=joinNumber1+sign;
-}
-
+function operator(symbol)    {
+    // to use a gotten result in futher calculations save this result as joinNumber1 first//
+    if (result && !sign){
+            joinNumber1=result;
+            sign=symbol;
+        mainLine.innerText=joinNumber1+sign;
+        
+        }
+       //to enter an operator once and only between two input numbers use use if statement     
+    if (!result && joinNumber1.length!=0 && !sign ){
+       
+        sign=symbol;
+        mainLine.innerText=joinNumber1+sign;}}      
+                                                  
 /*after the calculated result
  delete contents of arrays and operator
  for subsequent input of numbers*/

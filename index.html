@@ -89,16 +89,20 @@ function operator(symbol)    {
 function equal (symbol){
     
     if (sign=="+"){
-        mainLine.innerText=joinNumber1+joinNumber2;
+        result=joinNumber1+joinNumber2;
+        mainLine.innerText=result; 
     }
     if (sign=="-"){
-        mainLine.innerText=joinNumber1-joinNumber2;
+        result=joinNumber1-joinNumber2;
+        mainLine.innerText=result; 
     }
     if (sign=="*"){
-        mainLine.innerText=joinNumber1*joinNumber2;
+        result=joinNumber1*joinNumber2;
+        mainLine.innerText=result; 
     }
     if (sign=="/"){
-        mainLine.innerText=joinNumber1/joinNumber2;
+        result=joinNumber1/joinNumber2;
+        mainLine.innerText=result; 
     }
    empty();
 }

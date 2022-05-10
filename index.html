@@ -69,7 +69,7 @@ function operator(symbol)    {
         mainLine.innerText=joinNumber1+sign;
         
         }
-       //to enter an operator once and only between two input numbers use use if statement     
+       //to enter an operator once and only between two input numbers use if statement     
     if (!result && joinNumber1.length!=0 && !sign ){
        
         sign=symbol;
@@ -107,27 +107,35 @@ function equal (symbol){
    empty();
 }
 // add function percentage
-// it'll convert both single input number in decimal and results of math. operations 
+
 function percentage(){
 
 // to convert a single input number
-if (inputNumber1.length!=0&&joinNumber1!=NaN) {
-mainLine.innerText=joinNumber1/100
-}
-//to count a result by using %
+if (inputNumber1.length!=0 && joinNumber1!=NaN) {
+        result=joinNumber1/100;
+mainLine.innerText=result;
+    }
+    // to convert a gotten result using %
+   else if (result){
+        result/=100;
+        mainLine.innerText=result;}
+//to use % in calculation (button "%" performs the same function as "=")
 if (sign=="+"){
-    mainLine.innerText=joinNumber1+joinNumber1*joinNumber2/100;
+    result=joinNumber1+joinNumber1*joinNumber2/100;  
+        mainLine.innerText=result;    
       
 }
 if (sign=="-"){
-    mainLine.innerText=joinNumber1-joinNumber1*joinNumber2/100;
+    result=joinNumber1-joinNumber1*joinNumber2/100;
+        mainLine.innerText=result;
 }
 if (sign=="*"){
-    mainLine.innerText=joinNumber1*joinNumber2/100;
+    result=joinNumber1*(joinNumber2/100);
+        mainLine.innerText=result;
 }
 if (sign=="/"){
-    mainLine.innerText=joinNumber1/joinNumber2/100;
-}
+    result=joinNumber1/(joinNumber2/100);
+        mainLine.innerText=result;}
 empty();
     
 }

@@ -13,4 +13,6 @@
 
 5. P.: If to enter numbers for calculation from the beginning, there is no problem at all, but, if to continue counting by just adding an operator sign to result, gotten from previous calculation, the calculator begins to work incorrectly.   S.: I decided to create one more variable to store result of math. operations, then added a condition, that, if exactly this result takes part in further calculation, then it'll be saved as joinNumber1 firstly, thereby allowing other functionsto work properly.
 
+6. P.: After creating var result, it appeared to be impossible to start calculation from the beginning, I mean to enter first number, then operator and the second number, if it's dispalyed a result from previuos calculation.   S.: To the function input I added updated variable result, that is equal to 0 as it allowed this function to run correctly.   
+
  

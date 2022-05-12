@@ -117,32 +117,34 @@ function equal (){
 
 function percentage(){
 
-// to convert a single input number
-if (inputNumber1.length!=0 && joinNumber1!=NaN) {
+// to convert a gotten result using %
+if (result){
+             result/=100;
+       }
+ // to convert a single input number
+if (inputNumber1.length!=0) {
         result=joinNumber1/100;
-mainLine.innerText=result;
     }
-    // to convert a gotten result using %
-   else if (result){
-        result/=100;
-        mainLine.innerText=result;}
-//to use % in calculation (button "%" performs the same function as "=")
+    
+    //to use % in calculation (button "%" performs the same function as "=")
 if (sign=="+"){
     result=joinNumber1+joinNumber1*joinNumber2/100;  
-        mainLine.innerText=result;    
-      
-}
+          
+      }
 if (sign=="-"){
     result=joinNumber1-joinNumber1*joinNumber2/100;
-        mainLine.innerText=result;
+        
 }
 if (sign=="*"){
     result=joinNumber1*(joinNumber2/100);
-        mainLine.innerText=result;
+        
 }
 if (sign=="/"){
     result=joinNumber1/(joinNumber2/100);
-        mainLine.innerText=result;}
+        }
+       
+        mainLine.innerText=result;
+
 empty();
     
 }

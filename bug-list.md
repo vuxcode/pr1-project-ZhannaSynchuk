@@ -15,4 +15,10 @@
 
 6. P.: After creating var result, it appeared to be impossible to start calculation from the beginning, I mean to enter first number, then operator and the second number, if it's dispalyed a result from previuos calculation.   S.: To the function input I added updated variable result, that is equal to 0 as it allowed this function to run correctly.   
 
+7. P.: If to press equal sing after an math. expression (like 9/3=) it will give correct result, but if to press it by misstake after the first entered number or after a math. operator it breaks the expression.   S.:  I added conditions that will prevent the equal sign from functioning if it's pressed accidentally in a wrong place. 
+
+8. P.: As with the function equal I had some problems with f. percentage. It could be dispalyed broke an expresion every time it's pressed.  S.: Additional conditions under which the button % works properly.
+
+9. P.: First when I created function del it deleted all the information from the calculator screen by saving an empty string in the mainLine, but by pressing any math. operator it's displayed this operator together with the number that was early deleted.  S.: For to make this function to work (to delete input information) I used another function empty(), but it covers only arrays of inputNumber1 and 2 as well as variable sign, but not variables joinNumber1 and 2, that take part in calculations. It was necessary to add them in this function and set them to zero.
+
  

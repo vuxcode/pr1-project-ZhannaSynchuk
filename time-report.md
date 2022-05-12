@@ -13,3 +13,5 @@
 2022-05-10: 9.00 - 3,5 h. updated buttons; added variable to store a gotten result for further calculation; changed function operator for it to be used only once in a row between two input numbers; changed function percentage so that it's possible to convert both a single input number and a gotten result in decimal as well as to use % in calculations, where it'll perform the same function as "=".   
 
 2022-05-10: 21.00 - 1 h. created function del for button "C".
+
+2022-05-12: 9.30 - 3,5 h. changed function equal so for it to allow to give out a result but without distroying other functions in case the equal sign is pressed by misstake in a wrong place, in the center of expression, for instance. Corrected function percentage out of the same reason, changed some conditions in this function so the sign % will function if these specific conditions are kept. Changed function del fot it not only to display empty calculator screen but also to delete all information, saved in arrays and variables above, for to start calculations from the beginning. 

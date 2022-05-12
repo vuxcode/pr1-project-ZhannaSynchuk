@@ -40,9 +40,9 @@ var result=0;
 //add a function that displays input symbols in the input line
 function input(symbol){
 
-    //use if/else statement to store input numbers in the desired array
+    //use if/else statement to store input numbers in the specific array
     //if there isn't any input operator input numbers are saved in the first array
-    if (sign==false){
+    if (!sign){
         //to start entering numbers from the beginning, reset a result of previous calculation
         result=0;
         inputNumber1.push(symbol);
@@ -62,6 +62,7 @@ function input(symbol){
     }
 //create a function operator that displays mathematical sign in the input line
 function operator(symbol)    {
+
     // to use a gotten result in futher calculations save this result as joinNumber1 first//
     if (result && !sign){
             joinNumber1=result;
@@ -73,7 +74,9 @@ function operator(symbol)    {
     if (!result && joinNumber1.length!=0 && !sign ){
        
         sign=symbol;
-        mainLine.innerText=joinNumber1+sign;}}      
+        mainLine.innerText=joinNumber1+sign;}
+    console.log(sign);
+}      
                                                   
 /*after the calculated result
  delete contents of arrays and operator
@@ -86,25 +89,29 @@ function operator(symbol)    {
 
 
 //created a function equal to do calculations by using if/else statement
-function equal (symbol){
+function equal (){
+    
+    if (inputNumber2.length!=0){
     
     if (sign=="+"){
         result=joinNumber1+joinNumber2;
-        mainLine.innerText=result; 
+       
     }
     if (sign=="-"){
         result=joinNumber1-joinNumber2;
-        mainLine.innerText=result; 
+       
     }
     if (sign=="*"){
         result=joinNumber1*joinNumber2;
-        mainLine.innerText=result; 
+       
     }
     if (sign=="/"){
         result=joinNumber1/joinNumber2;
-        mainLine.innerText=result; 
+        
     }
-   empty();
+    mainLine.innerText=result; 
+
+   empty();}
 }
 // add function percentage
 

@@ -27,11 +27,11 @@
     //store an empty array as variable for the first number
     var inputNumber1=[];
     //update inputNumber1 by using join() method
-    var joinNumber1=[];
+    var joinNumber1=0;
      //store another empty array as variable for the second number
      var inputNumber2=[];
      //update inputNumber2 by using join();
-     var joinNumber2=[];
+     var joinNumber2=0;
      //create a variable with empty string to store the input operator  
      var sign="";
 //create a variable to store calculation results for further use them in the code
@@ -71,7 +71,7 @@ function operator(symbol)    {
         
         }
        //to enter an operator once and only between two input numbers use if statement     
-    if (!result && joinNumber1.length!=0 && !sign ){
+    if (!result && joinNumber1 && !sign ){
        
         sign=symbol;
         mainLine.innerText=joinNumber1+sign;}
@@ -117,16 +117,25 @@ function equal (){
 
 function percentage(){
 
-// to convert a gotten result using %
-if (result){
-             result/=100;
-       }
- // to convert a single input number
-if (inputNumber1.length!=0) {
-        result=joinNumber1/100;
+// to convert a single input number
+ 
+if (!sign && inputNumber1.length!=0){
+            result=joinNumber1/100;
+            mainLine.innerText=result;
+            empty();
     }
+
+   // to convert a gotten result using %
+ else if (!sign && result){
+   
+   result/=100;
+   mainLine.innerText=result;
+   empty();
+}
     
     //to use % in calculation (button "%" performs the same function as "=")
+    if (sign && inputNumber2.length!=0){
+
 if (sign=="+"){
     result=joinNumber1+joinNumber1*joinNumber2/100;  
           
@@ -145,7 +154,7 @@ if (sign=="/"){
        
         mainLine.innerText=result;
 
-empty();
+empty();}
     
 }
 //added function del for button "C"

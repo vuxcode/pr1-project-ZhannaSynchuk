@@ -21,4 +21,6 @@
 
 9. P.: First when I created function del it deleted all the information from the calculator screen by saving an empty string in the mainLine, but by pressing any math. operator it's displayed this operator together with the number that was early deleted.  S.: For to make this function to work (to delete input information) I used another function empty(), but it covers only arrays of inputNumber1 and 2 as well as variable sign, but not variables joinNumber1 and 2, that take part in calculations. It was necessary to add them in this function and set them to zero.
 
+10. P.: If to press M+ and M- in a wrong place or to continue calculation after a result is extracted from the memory, output on the calculator display was incorrect.  S.: As it mentioned above to resolv such problem it is necessary to set specific conditions that prevent from misstakes in calculations.  
+
  

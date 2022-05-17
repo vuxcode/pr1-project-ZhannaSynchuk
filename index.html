@@ -1,6 +1,8 @@
 <!--Add an input line and buttons-->
-
-<h1 id="input"></h1> <br> 
+<center>
+<div id="input"></div> <br> 
+<button onclick="memoryEnt('M+')">M+</button>
+<button onclick="memoryExt('M-')">M-</button>
 <button onclick="del('C')">C</button> <br>
 <button onclick="input(7)">7</button> 
 <button onclick="input(8)">8</button> 
@@ -18,6 +20,8 @@
 <button onclick="percentage('%')">%</button> 
 <button onclick="operator('*')">*</button> 
 <button onclick="equal('=')">=</button> 
+
+</center>
 <script>
     
 
@@ -34,8 +38,11 @@
      var joinNumber2=0;
      //create a variable with empty string to store the input operator  
      var sign="";
-//create a variable to store calculation results for further use them in the code
-var result=0;
+     //create a variable to store calculation results for further use them in the code
+     var result=0;
+     //create variable to save input numbers in memory
+     var memory=0;
+
 
 //add a function that displays input symbols in the input line
 function input(symbol){
@@ -165,8 +172,32 @@ function del(){
        joinNumber2=0;
        mainLine.innerText=" ";
 } 
+function memoryEnt(){
+    if (result && !sign){
+        
+memory=result;
+empty(); 
+joinNumber1=0;
+joinNumber2=0;
+result=0;
+ mainLine.innerText=" ";
+ console.log(memory);}
+     }
 
-      
-   
-    
+function memoryExt(){
+         if (inputNumber1.length==0 && memory!=0){
+             joinNumber1=memory;
+             mainLine.innerText=joinNumber1;
+             memory=0;
+         }
+         if (inputNumber2.length==0 && sign && memory!=0){
+             
+             joinNumber2=memory;
+mainLine.innerText=joinNumber1+sign+joinNumber2;
+memory=" ";      
+   }
+     }
+          
+  
+  
 </script>

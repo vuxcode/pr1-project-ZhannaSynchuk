@@ -38,11 +38,8 @@
      var joinNumber2=0;
      //create a variable with empty string to store the input operator  
      var sign="";
-     //create a variable to store calculation results for further use them in the code
-     var result=0;
-     //create variable to save input numbers in memory
-     var memory=0;
-
+//create a variable to store calculation results for further use them in the code
+var result=0;
 
 //add a function that displays input symbols in the input line
 function input(symbol){
@@ -69,9 +66,12 @@ function input(symbol){
     }
 //create a function operator that displays mathematical sign in the input line
 function operator(symbol)    {
+    if (result=="ERROR!" || !result && !joinNumber1){
+            mainLine.innerText=" ";
+        }
 
     // to use a gotten result in futher calculations save this result as joinNumber1 first//
-    if (result && !sign){
+    if (result && result!= "ERROR!" && !sign){
             joinNumber1=result;
             sign=symbol;
         mainLine.innerText=joinNumber1+sign;
@@ -92,7 +92,9 @@ function operator(symbol)    {
     inputNumber1.length=0;
     sign=0;
     inputNumber2.length=0;
-}
+    joinNumber1=0;
+    joinNumber2=0;
+    }
 
 
 //created a function equal to do calculations by using if/else statement
@@ -116,9 +118,12 @@ function equal (){
         result=joinNumber1/joinNumber2;
         
     }
+    if (sign=="/" && joinNumber2==0){
+            result="ERROR!";}
     mainLine.innerText=result; 
 
    empty();}
+   console.log(result);
 }
 // add function percentage
 
@@ -158,6 +163,8 @@ if (sign=="*"){
 if (sign=="/"){
     result=joinNumber1/(joinNumber2/100);
         }
+        if (sign=="/" && joinNumber2==0){
+            result="ERROR!";}
        
         mainLine.innerText=result;
 
@@ -196,8 +203,13 @@ function memoryExt(){
 mainLine.innerText=joinNumber1+sign+joinNumber2;
 memory=" ";      
    }
+
      }
-          
-  
-  
+
+      
+   
+
+      
+   
+    
 </script>

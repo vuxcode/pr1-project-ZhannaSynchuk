@@ -17,3 +17,5 @@
 2022-05-12: 9.30 - 3,5 h. changed function equal so for it to allow to give out a result but without distroying other functions in case the equal sign is pressed by misstake in a wrong place, in the center of expression, for instance. Corrected function percentage out of the same reason, changed some conditions in this function so the sign % will function if these specific conditions are kept. Changed function del fot it not only to display empty calculator screen but also to delete all information, saved in arrays and variables above, for to start calculations from the beginning. 
 
 2022-05-17: 8.00 - 2 h. added function for buttons memory.
+
+2022-05-22:  20.30 - 3,5 h. changed function operator so that it doesn't do anything if first number or result is equal "0" or if result is equal "ERROR!". Changed function equal where I have added result of division by "0" and the same with the function percentage.

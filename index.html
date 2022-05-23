@@ -184,8 +184,7 @@ function memoryEnt(){
         
 memory=result;
 empty(); 
-joinNumber1=0;
-joinNumber2=0;
+
 result=0;
  mainLine.innerText=" ";
  console.log(memory);}
@@ -197,8 +196,8 @@ function memoryExt(){
              mainLine.innerText=joinNumber1;
              memory=0;
          }
-         if (inputNumber2.length==0 && sign && memory!=0){
-             
+         if (inputNumber1.length!=0 && sign && memory!=0){
+            inputNumber2.push(memory);
              joinNumber2=memory;
 mainLine.innerText=joinNumber1+sign+joinNumber2;
 memory=" ";      

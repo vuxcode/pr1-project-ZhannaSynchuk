@@ -34,14 +34,14 @@ var inputNumber2=[];
 
 //update inputNumber1 and inputNumber2 by using join() method
 //save the numbers in new variables
-var joinNumber1=0;
-var joinNumber2=0;
+var joinNumber1="";
+var joinNumber2="";
                    
 //create a variable with empty string to store the input operator  
 var sign="";
 
 //create a variable to store calculation results for further use them in the code
-var result=0;
+var result="";
 
 //create a variable memory to store result for further calculation
 var memory="";
@@ -52,7 +52,7 @@ function input(symbol) {
     //there isn't any operator yet, input numbers are saved in the first array
     if (!sign) {
         //to start entering numbers from the beginning, reset a result of previous calculation
-        result=0;
+        result="";
         inputNumber1.push(symbol);
 
         //update variable by using join() method and save it as a number
@@ -79,7 +79,7 @@ function operator(symbol) {
     or if result from previuos calculations is "ERROR!" (division by 0)
     */
     if (result=="ERROR!" || !result && !joinNumber1) {
-        mainLine.innerText=" ";
+        mainLine.innerText="";
     }
     
     if (!sign) {
@@ -110,9 +110,9 @@ after we get result for subsequent calculation
 function empty() {
     inputNumber1.length=0;    
     inputNumber2.length=0;
-    sign=0;
-    joinNumber1=0;
-    joinNumber2=0;
+    sign="";
+    joinNumber1="";
+    joinNumber2="";
 }
 
 //created a function equal to calculate result

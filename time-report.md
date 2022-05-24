@@ -21,3 +21,5 @@
 2022-05-22: 20.30 - 3,5 h. changed function operator so that it doesn't do anything if first number or result is equal "0" or if result is equal "ERROR!". Changed function equal where I have added result of division by "0" and the same with the function percentage.
 
 2022-05-23: 10.00 - 1,5 h. updated function memory to do calculations by using extracted result as a second number
+
+2022-05-24: 9.00 - 1,5 h. corrected the code slightly, made it more neat

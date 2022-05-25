@@ -74,20 +74,19 @@ function input(symbol) {
 
 //create a function operator that displays mathematical sign 
 function operator(symbol) {
-    /*
-    the button "operator" won't work without fist input number
-    or if result from previuos calculations is "ERROR!" (division by 0)
-    */
-    if (result=="ERROR!" || !result && !joinNumber1) {
-        mainLine.innerText="";
-    }
-    
-    if (!sign) {
+    //conditions when the button will work    
+    if (!sign){
+        //first number will be automatically equal 0 if operator will be pressed first
+        if (!result && !joinNumber1) {
+        joinNumber1=0;
+        sign=symbol;
+        }
+       
         /*
         for to use math. operator after gotten result,
         it needs to save the result as joinNumber1 first
         */
-        if (result && result!= "ERROR!") {
+        else if (result) {
         joinNumber1=result;
         sign=symbol;
         }
@@ -134,8 +133,9 @@ function equal () {
 
         if (sign=="/") {
             //at division by 0 the result will be "ERROR!"
-            if (joinNumber2==0) {
-            result="ERROR!";
+            if (!joinNumber2) {
+            result="";
+            alert ("ERROR!");
             }
 
             else {
@@ -151,7 +151,7 @@ function equal () {
 function percentage() {
     //to convert a single number, both first input number and gotten result
     if (!sign) {
-        if (inputNumber1.length!=0) {
+        if (joinNumber1) {
         result=joinNumber1/100;
         }
 
@@ -159,7 +159,8 @@ function percentage() {
         result/=100;
         }
     mainLine.innerText=result;
-    emty();
+    empty();
+    console.log (result);
     } 
     
     //to use % in calculation (button "%" performs the same function as "=")
@@ -179,8 +180,9 @@ function percentage() {
 
         if (sign=="/") {
             //as with division by 0 the result will be "ERROR!"
-            if (joinNumber2==0) {
-            result="ERROR!";
+            if (!joinNumber2) {
+            result="";
+            alert ("ERROR!");
             }
 
             else {
@@ -194,38 +196,38 @@ function percentage() {
 
 //function del for button "C" that deletes all datas used for calculation 
 function del() {
-    result=0;
+    result="";
     empty();
-    mainLine.innerText=" ";
+    mainLine.innerText="";
 } 
 
 //function memoryEnt to save gotten result for further calculation
 function memoryEnt() {
-    //the function will work if only a result is displayed on the screen
+    //the function will work if only a result, except 0, is displayed on the screen
     if (result && !sign) {
     memory=result;
-    result=0;
-    empty(); 
-    mainLine.innerText=" ";
-    console.log(memory);
-    }
+    result="";
+    mainLine.innerText="";
+    alert ("The result is saved!");}  
+
+console.log(memory);
 }
 
 //function memoryExt to extract previously saved result
 function memoryExt() {
-    if (memory!=0) {
+    if (memory) {
         //in case the saved result acts as a first number in math. expression 
-        if (inputNumber1.length==0) {
+        if (!sign && !joinNumber1) {
         joinNumber1=memory;
         }
         
         //in case the saved result acts as a second number in math. expression
-        else if (inputNumber1.length!=0) {
+        else if (sign) {
         inputNumber2.push(memory);
         joinNumber2=memory;
         }
     mainLine.innerText=joinNumber1+sign+joinNumber2;
-    memory=" ";      
+    memory="";      
     }
 }
 

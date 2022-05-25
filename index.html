@@ -1,1 +1,235 @@
-<!-- Start writing your project code in this file! -->
+<!--Add a header, an input line and buttons-->
+<center>
+<header>Calculator</header>
+<div id="input"></div> <br> 
+<button onclick="memoryEnt('M+')">M+</button>
+<button onclick="memoryExt('M-')">M-</button>
+<button onclick="del('C')">C</button> <br>
+<button onclick="input(7)">7</button> 
+<button onclick="input(8)">8</button> 
+<button onclick="input(9)">9</button> 
+<button onclick="operator('+')">+</button> <br> 
+<button onclick="input(4)">4</button> 
+<button onclick="input(5)">5</button> 
+<button onclick="input(6)">6</button> 
+<button onclick="operator('-')">-</button> <br> 
+<button onclick="input(1)">1</button>
+<button onclick="input(2)">2</button>  
+<button onclick="input(3)">3</button> 
+<button onclick="operator('/')">/</button> <br>
+<button onclick="input(0)">0</button> 
+<button onclick="percentage('%')">%</button> 
+<button onclick="operator('*')">*</button> 
+<button onclick="equal('=')">=</button> 
+
+</center>
+<script>
+ 
+//create a variable to find the button element on the screen
+var mainLine=document.getElementById("input");
+    
+//store empty arrays as variables for the first and second numbers
+var inputNumber1=[];
+var inputNumber2=[];
+
+//update inputNumber1 and inputNumber2 by using join() method
+//save the numbers in new variables
+var joinNumber1="";
+var joinNumber2="";
+                   
+//create a variable with empty string to store the input operator  
+var sign="";
+
+//create a variable to store calculation results for further use them in the code
+var result="";
+
+//create a variable memory to store result for further calculation
+var memory="";
+
+//add a function that displays input numbers in a right place by using if/else statement
+function input(symbol) {
+
+    //there isn't any operator yet, input numbers are saved in the first array
+    if (!sign) {
+        //to start entering numbers from the beginning, reset a result of previous calculation
+        result="";
+        inputNumber1.push(symbol);
+
+        //update variable by using join() method and save it as a number
+        joinNumber1=Number(inputNumber1.join(''));
+        console.log(joinNumber1);
+        mainLine.innerText=joinNumber1;
+    }
+
+    //there is an operator already and input numbers are saved in the second array 
+    else {
+        inputNumber2.push(symbol);
+        
+        //update variable by using join() method and save it as a number
+        joinNumber2=Number(inputNumber2.join(''));
+        console.log(joinNumber2);
+        mainLine.innerText=joinNumber1+sign+joinNumber2;
+    }
+}
+
+//create a function operator that displays mathematical sign 
+function operator(symbol) {
+    
+    //conditions when the button will work    
+    if (!sign){               
+        /*
+        for to use math. operator after gotten result,
+        it needs to save the result as joinNumber1 first
+        */
+        if (result) {
+        joinNumber1=result;
+        sign=symbol;
+        }
+
+        /*if calculations start from beginning 
+        math. opertor will be displayed only after first entered */
+
+        else if (!result && joinNumber1) {
+        sign=symbol; 
+        }
+    mainLine.innerText=joinNumber1+sign;
+    }
+    console.log(sign);
+}      
+                                                  
+/*
+create a function that will empty arrays and variables 
+after we get result for subsequent calculation 
+*/
+function empty() {
+    inputNumber1.length=0;    
+    inputNumber2.length=0;
+    sign="";
+    joinNumber1="";
+    joinNumber2="";
+}
+
+//created a function equal to calculate result
+function equal () {
+
+    //the function will work only if there is a second input number    
+    if (inputNumber2.length!=0){
+        if (sign=="+") {
+        result=joinNumber1+joinNumber2;
+        }
+
+        if (sign=="-") {
+        result=joinNumber1-joinNumber2;
+        }
+
+        if (sign=="*") {
+        result=joinNumber1*joinNumber2;
+        }
+
+        if (sign=="/") {
+            //at division by 0 the result will be "ERROR!"
+            if (!joinNumber2) {
+            result="";
+            alert ("ERROR!");
+            }
+
+            else {
+            result=joinNumber1/joinNumber2;
+            }
+        }
+    mainLine.innerText=result;
+    empty();}
+    console.log(result);
+}
+
+// add function percentage
+function percentage() {
+    //to convert a single number, both first input number and gotten result
+    if (!sign) {
+        if (joinNumber1) {
+        result=joinNumber1/100;
+        }
+
+        else if (result) {
+        result/=100;
+        }
+    mainLine.innerText=result;
+    empty();
+    console.log (result);
+    } 
+    
+    //to use % in calculation (button "%" performs the same function as "=")
+    //as sign "=" it will work in case there is a second input number 
+    if (sign && inputNumber2.length!=0) {
+        if (sign=="+") {
+        result=joinNumber1+joinNumber1*joinNumber2/100;  
+        }
+
+        if (sign=="-") {
+        result=joinNumber1-joinNumber1*joinNumber2/100;
+        }
+
+        if (sign=="*") {
+        result=joinNumber1*(joinNumber2/100);
+        }
+
+        if (sign=="/") {
+            //as with division by 0 the result will be "ERROR!"
+            if (!joinNumber2) {
+            result="";
+            alert ("ERROR!");
+            }
+
+            else {
+            result=joinNumber1/(joinNumber2/100)
+            }
+        }
+    mainLine.innerText=result;
+    empty();
+    }
+}
+
+//function del for button "C" that deletes all datas used for calculation 
+function del() {
+    result="";
+    empty();
+    mainLine.innerText="";
+} 
+
+//function memoryEnt to save gotten result for further calculation
+function memoryEnt() {
+    //the function will work if only a result, except 0, is displayed on the screen
+    if (result && !sign) {
+    memory=result;
+    result="";
+    mainLine.innerText="";
+    alert ("The result is saved!");}  
+
+console.log(memory);
+}
+
+//function memoryExt to extract previously saved result
+function memoryExt() {
+    if (memory) {
+        //in case the saved result acts as a first number in math. expression 
+        if (!sign && !joinNumber1) {
+        joinNumber1=memory;
+        }
+        
+        //in case the saved result acts as a second number in math. expression
+        else if (sign) {
+        inputNumber2.push(memory);
+        joinNumber2=memory;
+        }
+    mainLine.innerText=joinNumber1+sign+joinNumber2;
+    memory="";      
+    }
+}
+
+      
+   
+
+      
+   
+    
+</script>

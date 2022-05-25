@@ -74,19 +74,15 @@ function input(symbol) {
 
 //create a function operator that displays mathematical sign 
 function operator(symbol) {
+    
     //conditions when the button will work    
     if (!sign){
-        //first number will be automatically equal 0 if operator will be pressed first
-        if (!result && !joinNumber1) {
-        joinNumber1=0;
-        sign=symbol;
-        }
-       
+               
         /*
         for to use math. operator after gotten result,
         it needs to save the result as joinNumber1 first
         */
-        else if (result) {
+        if (result) {
         joinNumber1=result;
         sign=symbol;
         }
